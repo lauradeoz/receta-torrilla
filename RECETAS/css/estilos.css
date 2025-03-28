@@ -1,0 +1,78 @@
+body {
+    background-color: hsl(32, 74%, 85%);
+    line-height: 30px;
+    color: rgb(83, 83, 83);
+}
+.container{
+    background-color: white;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 6px 6px 5px 2px rgba(10,10,10,0.65);
+}
+
+
+img{
+    width: 100%;
+    margin: 0 auto; 
+    border-radius: 10px;
+
+}
+
+p, h1, section{
+    font-family: "Roboto", sans-serif;
+}
+
+.fondo-1{
+    background-color: rgb(250, 208, 152);
+    border-radius: 10px;
+}
+
+.borde{
+    border: solid 2px black;
+    border-radius: 10px;
+}
+
+section, p, h1{
+    padding: 25px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+tr:not(:last-child){
+    border-bottom: 1px solid black;
+}
+
+
+span{
+    font-weight: bold;
+}
+
+.morado{
+    color: rgb(73, 18, 110);
+}
+h2{
+    color: rgb(129, 62, 21);
+}
+
+ul li::marker{
+    color: rgb(129, 62, 21);
+}
+
+
+ul.cuadrado{
+    list-style-type: square;
+}
+
+ol li::marker{
+    color: rgb(129, 62, 21);
+    font-weight: bold;
+}
+
+.marroncito{
+    color: rgb(129, 62, 21);
+    font-weight: bold;
+}

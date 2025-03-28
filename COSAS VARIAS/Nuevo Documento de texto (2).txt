@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECETAS</title>
+</head>
+<body>
+    <main>
+        <img src="img/tortilla_francesa.png" />
+        <h1>Receta básica de tortilla</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+  <section>
+    <h2>Tiempo de preparación</h2>
+    <ul>
+        <li>Total: Aproximadamente 10 minutos</li>
+        <li>Preparación: 5 minutos</li>
+        <li>Cocinado: 5 minutos</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Imgredientes</h2>
+    <ul>
+        <li>Huevos</li>
+        <li>Aceite o mantequilla</li>
+        <li>Sal</li>
+        <li>Pimienta</li>
+    </ul>
+  </section>  
+  <section>
+    <h2>Instrucciones</h2>
+    <ol>
+        <li>En un bol, batimos los huevos con un tenedor añadiendo sal y pimienta</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+  </section>  
+  <section>
+    <h2>Nutrición</h2>
+  </section>
+
+    </main>
+ 
+</body>
+</html>
