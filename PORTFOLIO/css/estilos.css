@@ -1,0 +1,115 @@
+
+:root{
+    --white: #ffffff;
+    --dark: #150a16;
+    --primary: #00B341;
+    --secundary: #DE9100;
+    --secundarydos: #f8cd7c;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+}
+
+*{
+    box-sizing:border-box;
+
+}
+body{
+    background-image: linear-gradient(var(--white), var(--secundarydos));
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h1 span{
+    font-size: 2rem;
+}
+h2{
+    font-size: 3rem;
+}
+p{
+    font-size: 1.5rem;
+}
+
+h1{
+    text-align: center;
+    margin: 0.5rem;
+    color: var(--dark);
+    font-weight: bolder;
+}
+
+.Navegacion{
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 480px){
+    .Navegacion{
+    flex-direction:row;
+    justify-content:space-around;
+    }
+}
+.Navegacion a{
+
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.Navegacion a:hover{
+    color: var(--dark);
+    background-color: var(--secundarydos);
+}
+.banner{
+    background-image: url('../img/programming-background-with-person-working-with-codes-computer.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+}
+img{
+    width: 5rem;
+}
+
+.section-banner{
+    background-color: rgba(0, 0, 0, 0, 5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.section-banner p,
+.section-banner h2{
+    color: var(--white);
+}
+
+.boton{
+    background-color: var(--secundary);
+    color: var(--white);
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+}
+@media (min-width: 480px){
+    .boton{
+        width: auto;
+    }
+}
+.center-vertical{
+    display: flex;
+    gap: 1rem;
+}
