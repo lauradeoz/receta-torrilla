@@ -1,0 +1,235 @@
+
+:root{
+    --principal: #4a3f35;
+    --secundario: #faf3e0;
+    --formulario: #d4a373;
+}
+
+html{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 62.5;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--secundario);
+}
+
+.navegacion{
+    background-color: var(--principal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+.navegacion a{
+    padding: 1rem;
+    color: var(--secundario);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 480px){
+    .navegacion{
+    flex-direction:row;
+    justify-content:space-around;
+    }
+}
+.navegacion a:hover{
+    color: var(--formulario);
+}
+
+main{
+    background-color: var(--secundario);
+
+    margin: 0 auto;
+}
+
+.banner{
+    background-image: url('../img/fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+}
+
+.section-banner{
+    background-color:rgba(0, 0, 0, 0.315);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;  
+}
+
+.section-banner p,
+.section-banner h2{
+    color: var(--secundario);
+    margin: 0.5rem;
+}
+.section-banner h2{
+    font-size: 2.5rem;
+}
+
+@keyframes fadeIn{
+    from{opacity: 0; transform:translateY(-20px)}
+    to{opacity: 1; transform: translateY(0);}
+}
+.section-banner h2{
+    animation: fadeIn 2s ease;
+}
+
+.container-favoritos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+
+}
+
+@media(min-width:480px){
+    .container-favoritos{
+        flex-direction: row;
+    }
+}
+
+
+.section-favoritos h2{
+    color: var(--principal);
+    text-align: center;
+    font-weight: bold;
+    padding-top: 3rem;
+}
+
+.div-favoritos img{
+width: 300px;
+border-top-left-radius: 1rem;
+border-top-right-radius: 1rem;
+}
+
+.div-favoritos{
+    background-color: white;
+    margin: 2rem;
+    border-radius: 1rem;
+    width: 300px;
+    max-width: 1200px;
+    box-shadow: 9px 10px 27px -1px rgba(0,0,0,0.75);
+}
+.div-favoritos p{
+    line-height: 2;
+    padding: 1rem;
+    text-align:left;
+    color: var(--principal);
+    line-height: normal;
+}
+.div-favoritos h3{
+    padding-top: 1rem;
+    padding-left: 1rem;
+    color: var(--principal);
+}
+
+.div-favoritos{
+    transition: 0.3s ease;
+}
+.div-favoritos:hover{
+    transform: translateY(-7px);
+}
+
+.container-favoritos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.div-favoritos{
+    flex: 1 1 calc(33.33%-10px);
+}
+
+.section-formulario{
+    background-color: var(--formulario);
+    margin: 0 auto;
+    padding: 0 auto;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.formulario{
+    background-color: var(--formulario);
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.section-formulario h2{
+    color: var(--principal);
+    text-align: center;
+    align-items: center;
+    padding-top: 2rem;
+    
+    }
+ .inputs{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+ }   
+.container-inputs{
+    margin-bottom: 1rem;
+}
+
+   
+
+.container-inputs input, textarea{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    align-items: center;
+}
+
+
+.boton{
+    background-color: var(--principal);
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+ .boton:hover{
+    background-color: rgb(44, 34, 14);
+ }
+footer{
+    background-color: var(--principal);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+footer p{
+    margin-bottom: 2rem;
+}
+
+footer img{
+
+    width: 25px;
+}
