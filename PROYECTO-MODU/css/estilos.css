@@ -30,6 +30,7 @@ body {
     text-align: center;
     flex-direction: column;
     position: fixed;
+    width: 100%;
 }
 
 .navegacion a{
