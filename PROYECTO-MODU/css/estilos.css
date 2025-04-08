@@ -29,6 +29,7 @@ body {
     padding: 20px 0;
     text-align: center;
     flex-direction: column;
+    position: fixed;
 }
 
 .navegacion a{
