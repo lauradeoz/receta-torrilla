@@ -1,0 +1,272 @@
+
+
+    :root{
+        --morado: #4a007d;
+        --amarillo: #ffa111;
+        --gris: #333;
+        --morado-claro: #4b007d2d;
+        --amarilla-claro: #ffa1112d;
+
+    }
+
+    html{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+
+}
+
+.navegacion{
+    background-color: var(--morado);
+    padding: 20px 0;
+    text-align: center;
+    flex-direction: column;
+}
+
+.navegacion a{
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+@media(min-width:480px){
+    .navegacion{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.navegacion a:hover{
+    color: var(--amarillo);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.banner{
+
+    background-image: url('../img/FONDO-COSAS.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:350px;
+}
+
+img{
+    width: 10rem;
+}
+
+.section-banner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.boton{
+    background-color: var(--morado);
+    color: white;
+    margin: 3rem;
+    padding: 1rem 1rem;
+    font-size: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 20%;
+}
+
+
+
+.container-branding{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 3rem;
+    flex-wrap: wrap;
+}
+
+.section-branding{
+    background-color: var(--morado-claro);
+
+}
+
+@media(min-width:480px){
+    .container-branding{
+        flex-direction: row;
+    }
+}
+
+.section-branding h2{
+text-align: center;
+color: var(--morado);
+font-weight: bold;
+padding-top: 3rem;
+font-size: 1.5rem;
+}
+
+.section-branding h3{
+    color: var(--morado);
+    padding: 2rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 3rem;
+}
+
+.div-branding img{
+width: 300px;
+border-top-left-radius: 1rem;
+border-top-right-radius: 1rem;
+}
+
+.div-branding{
+    background-color: white;
+    margin: 2rem;
+    border-radius: 1rem;
+    width: 300px;
+    max-width: 1200px;
+    box-shadow: 9px 10px 27px -1px rgba(0,0,0,0.75);
+}
+
+.div-branding p{
+    padding: 2rem;
+    text-align:left;
+    line-height: normal;
+}
+
+.div-branding{
+    transition: 0.3s ease;
+}
+.div-branding:hover{
+    transform: translateY(-7px);
+}
+
+
+
+.section-portfolio{
+    background-color: var(--amarilla-claro);
+}
+.container-portfolio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 3rem;
+    flex-wrap: wrap;
+}
+
+@media(min-width:300px){
+    .container-portfolio{
+        flex-direction: row;
+    }
+}
+
+.section-portfolio h2{
+text-align: center;
+color: var(--amarillo);
+font-weight: bold;
+padding-top: 3rem;
+font-size: 1.5rem;
+}
+
+.section-portfolio h3{
+    color: var(--morado);
+    padding: 2rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 3rem;
+}
+
+.div-portfolio img{
+width: 300px;
+border-radius: 1rem;
+align-items: flex-end;
+margin-bottom: -30px;
+}
+
+.div-portfolio{
+    background-color: white;
+    margin: 2rem;
+    border-radius: 1rem;
+    width: 300px;
+    max-width: 1200px;
+    box-shadow: 9px 10px 27px -1px rgba(0,0,0,0.75);
+}
+
+
+.div-portfolio{
+    transition: 0.3s ease;
+}
+.div-portfolio:hover{
+    transform: translateY(-7px);
+}
+
+
+
+
+
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.section-formulario{
+    background-image: url(../img/FONDO-COSAS.jpg);
+    padding-bottom: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.section-formulario h2{
+    text-align: center;
+    color: var(--morado);
+    padding-top: 2rem;
+}
+form label {
+    margin: 10px 0 5px;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color:var(--morado);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--gris);
+    color: white;
+}
