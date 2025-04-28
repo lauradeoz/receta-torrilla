@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+
+        <!-- formulario que obtenga el nombre, peso y altura -->
+
+    <div class="container">
+
+        <h2>FORMULARIO DE DATOS IMC</h2>
+
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="peso">Peso (Kg)</label>
+            <input type="number" id="peso" placeholder="Ingresa tu peso en kg">
+        </div>
+
+        <div class="form-group">
+            <label for="altura">Altura (cm)</label>
+            <input type="number" id="altura" placeholder="Ingresa tu altura en cm">
+        </div>
+
+        <button id="botonEnviar">Calcular IMC</button>
+
+        <div id="resultado">
+            <h3>Resultado del estudio</h3>
+            <p id="resultadoEstudio">No tenemos datos concluyentes</p>
+            <p id="mostrarErrores"></p>
+
+        </div>
+
+    <script src="JS/indice-masa.js"></script>
+    
+</body>
+</html>
