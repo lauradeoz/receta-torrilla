@@ -1,0 +1,48 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 3rem;
+    flex-wrap: wrap;
+
+}
+
+img{
+    width: 200px;
+}
+
+.container{
+    background-color: white;
+    margin: 2rem;
+    border-radius: 1rem;
+    width: 300px;
+    max-width: 1200px;
+    box-shadow: 9px 10px 27px -1px rgba(0,0,0,0.75);
+    text-align: center;
+    padding: 2rem;
+    
+}
+.container p{
+    padding: 1rem;
+    text-align:center;
+    font-weight: bold;
+}
+
+.container h3{
+    padding-top: 1rem;
+    padding-left: 1rem;
+    font-weight: bold;
+}
+button{
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border-radius: 1rem;
+}

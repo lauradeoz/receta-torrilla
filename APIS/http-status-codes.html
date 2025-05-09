@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Códigos de Estado HTTP</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .category {
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-header {
+            padding: 12px 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .info .category-header {
+            background-color: #3498db;
+        }
+        
+        .success .category-header {
+            background-color: #2ecc71;
+        }
+        
+        .redirect .category-header {
+            background-color: #f39c12;
+        }
+        
+        .client-error .category-header {
+            background-color: #e74c3c;
+        }
+        
+        .server-error .category-header {
+            background-color: #8e44ad;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .code {
+            font-weight: bold;
+            width: 80px;
+        }
+        
+        .description {
+            width: 30%;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            .details {
+                display: none;
+            }
+            
+            .description {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Códigos de Estado HTTP</h1>
+    
+    <!-- 1xx: Informational -->
+    <div class="category info">
+        <div class="category-header">1xx - Respuestas Informativas</div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="code">Código</th>
+                    <th class="name">Nombre</th>
+                    <th class="description">Descripción</th>
+                    <th class="details">Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="code">100</td>
+                    <td>Continue</td>
+                    <td>Continuar</td>
+                    <td>El servidor ha recibido los headers de la petición y el cliente debería proceder a enviar el cuerpo de la misma.</td>
+                </tr>
+                <tr>
+                    <td class="code">101</td>
+                    <td>Switching Protocols</td>
+                    <td>Cambio de Protocolo</td>
+                    <td>El servidor acepta el cambio de protocolo solicitado por el cliente (ej. de HTTP a WebSocket).</td>
+                </tr>
+                <tr>
+                    <td class="code">102</td>
+                    <td>Processing</td>
+                    <td>Procesando</td>
+                    <td>El servidor está procesando la petición pero aún no hay respuesta disponible.</td>
+                </tr>
+                <tr>
+                    <td class="code">103</td>
+                    <td>Early Hints</td>
+                    <td>Primeras Pistas</td>
+                    <td>Permite al cliente precargar recursos mientras el servidor prepara una respuesta.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- 2xx: Success -->
+    <div class="category success">
+        <div class="category-header">2xx - Respuestas Satisfactorias</div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="code">Código</th>
+                    <th class="name">Nombre</th>
+                    <th class="description">Descripción</th>
+                    <th class="details">Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="code">200</td>
+                    <td>OK</td>
+                    <td>Correcto</td>
+                    <td>La petición ha tenido éxito. El significado depende del método HTTP usado.</td>
+                </tr>
+                <tr>
+                    <td class="code">201</td>
+                    <td>Created</td>
+                    <td>Creado</td>
+                    <td>La petición ha sido completada y ha resultado en la creación de un nuevo recurso.</td>
+                </tr>
+                <tr>
+                    <td class="code">202</td>
+                    <td>Accepted</td>
+                    <td>Aceptado</td>
+                    <td>La petición ha sido aceptada para procesamiento, pero el procesamiento no ha sido completado.</td>
+                </tr>
+                <tr>
+                    <td class="code">203</td>
+                    <td>Non-Authoritative Information</td>
+                    <td>Información No Autorizada</td>
+                    <td>El servidor procesó correctamente la petición, pero está devolviendo información de otra fuente.</td>
+                </tr>
+                <tr>
+                    <td class="code">204</td>
+                    <td>No Content</td>
+                    <td>Sin Contenido</td>
+                    <td>La petición se ha completado con éxito pero no hay cuerpo de respuesta para devolver.</td>
+                </tr>
+                <tr>
+                    <td class="code">205</td>
+                    <td>Reset Content</td>
+                    <td>Reiniciar Contenido</td>
+                    <td>El servidor ha completado la petición y el cliente debería reiniciar la vista del documento.</td>
+                </tr>
+                <tr>
+                    <td class="code">206</td>
+                    <td>Partial Content</td>
+                    <td>Contenido Parcial</td>
+                    <td>El servidor entrega solo parte del recurso debido a un header Range enviado por el cliente.</td>
+                </tr>
+                <tr>
+                    <td class="code">207</td>
+                    <td>Multi-Status</td>
+                    <td>Multi-Estado</td>
+                    <td>Respuesta WebDAV que puede contener múltiples códigos de respuesta.</td>
+                </tr>
+                <tr>
+                    <td class="code">208</td>
+                    <td>Already Reported</td>
+                    <td>Ya Reportado</td>
+                    <td>Usado en WebDAV para evitar enlistar miembros internos de colecciones múltiples veces.</td>
+                </tr>
+                <tr>
+                    <td class="code">226</td>
+                    <td>IM Used</td>
+                    <td>IM Usado</td>
+                    <td>El servidor ha cumplido la petición GET para el recurso y la respuesta es una representación del resultado tras aplicar una o más transformaciones.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- 3xx: Redirection -->
+    <div class="category redirect">
+        <div class="category-header">3xx - Redirecciones</div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="code">Código</th>
+                    <th class="name">Nombre</th>
+                    <th class="description">Descripción</th>
+                    <th class="details">Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="code">300</td>
+                    <td>Multiple Choices</td>
+                    <td>Múltiples Opciones</td>
+                    <td>Existen múltiples opciones para el recurso desde las cuales el cliente puede elegir.</td>
+                </tr>
+                <tr>
+                    <td class="code">301</td>
+                    <td>Moved Permanently</td>
+                    <td>Movido Permanentemente</td>
+                    <td>El recurso se ha movido permanentemente a una nueva URL.</td>
+                </tr>
+                <tr>
+                    <td class="code">302</td>
+                    <td>Found</td>
+                    <td>Encontrado</td>
+                    <td>El recurso se encuentra temporalmente en una URL diferente.</td>
+                </tr>
+                <tr>
+                    <td class="code">303</td>
+                    <td>See Other</td>
+                    <td>Ver Otro</td>
+                    <td>La respuesta a la petición se encuentra en una URL diferente y debe ser obtenida mediante un método GET.</td>
+                </tr>
+                <tr>
+                    <td class="code">304</td>
+                    <td>Not Modified</td>
+                    <td>No Modificado</td>
+                    <td>El recurso no ha sido modificado desde la última petición. Se usa para caché.</td>
+                </tr>
+                <tr>
+                    <td class="code">307</td>
+                    <td>Temporary Redirect</td>
+                    <td>Redirección Temporal</td>
+                    <td>El recurso se encuentra temporalmente en otra URL. El método HTTP no debe cambiar.</td>
+                </tr>
+                <tr>
+                    <td class="code">308</td>
+                    <td>Permanent Redirect</td>
+                    <td>Redirección Permanente</td>
+                    <td>El recurso se ha movido permanentemente a otra URL. El método HTTP no debe cambiar.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- 4xx: Client Error -->
+    <div class="category client-error">
+        <div class="category-header">4xx - Errores del Cliente</div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="code">Código</th>
+                    <th class="name">Nombre</th>
+                    <th class="description">Descripción</th>
+                    <th class="details">Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="code">400</td>
+                    <td>Bad Request</td>
+                    <td>Petición Incorrecta</td>
+                    <td>El servidor no pudo entender la petición debido a una sintaxis inválida.</td>
+                </tr>
+                <tr>
+                    <td class="code">401</td>
+                    <td>Unauthorized</td>
+                    <td>No Autorizado</td>
+                    <td>La petición requiere autenticación del usuario.</td>
+                </tr>
+                <tr>
+                    <td class="code">402</td>
+                    <td>Payment Required</td>
+                    <td>Pago Requerido</td>
+                    <td>Reservado para uso futuro. Podría usarse para servicios digitales de pago.</td>
+                </tr>
+                <tr>
+                    <td class="code">403</td>
+                    <td>Forbidden</td>
+                    <td>Prohibido</td>
+                    <td>El servidor entendió la petición, pero se niega a autorizarla.</td>
+                </tr>
+                <tr>
+                    <td class="code">404</td>
+                    <td>Not Found</td>
+                    <td>No Encontrado</td>
+                    <td>El servidor no puede encontrar el recurso solicitado.</td>
+                </tr>
+                <tr>
+                    <td class="code">405</td>
+                    <td>Method Not Allowed</td>
+                    <td>Método No Permitido</td>
+                    <td>El método solicitado es conocido por el servidor pero no está soportado para el recurso.</td>
+                </tr>
+                <tr>
+                    <td class="code">406</td>
+                    <td>Not Acceptable</td>
+                    <td>No Aceptable</td>
+                    <td>El recurso solicitado no puede generar contenido según los encabezados Accept enviados.</td>
+                </tr>
+                <tr>
+                    <td class="code">407</td>
+                    <td>Proxy Authentication Required</td>
+                    <td>Autenticación de Proxy Requerida</td>
+                    <td>Similar al 401, pero indica que el cliente debe autenticarse primero con el proxy.</td>
+                </tr>
+                <tr>
+                    <td class="code">408</td>
+                    <td>Request Timeout</td>
+                    <td>Tiempo de Espera Agotado</td>
+                    <td>El servidor agotó el tiempo de espera mientras esperaba la petición.</td>
+                </tr>
+                <tr>
+                    <td class="code">409</td>
+                    <td>Conflict</td>
+                    <td>Conflicto</td>
+                    <td>La petición no pudo completarse debido a un conflicto con el estado actual del recurso.</td>
+                </tr>
+                <tr>
+                    <td class="code">410</td>
+                    <td>Gone</td>
+                    <td>Ya no Disponible</td>
+                    <td>El recurso solicitado ya no está disponible en el servidor y no hay dirección alternativa.</td>
+                </tr>
+                <tr>
+                    <td class="code">411</td>
+                    <td>Length Required</td>
+                    <td>Longitud Requerida</td>
+                    <td>El servidor rechaza la petición porque el campo Content-Length no está definido.</td>
+                </tr>
+                <tr>
+                    <td class="code">412</td>
+                    <td>Precondition Failed</td>
+                    <td>Precondición Fallida</td>
+                    <td>El servidor no cumple una de las precondiciones indicadas por el cliente.</td>
+                </tr>
+                <tr>
+                    <td class="code">413</td>
+                    <td>Payload Too Large</td>
+                    <td>Carga Útil Demasiado Grande</td>
+                    <td>La petición es más grande de lo que el servidor está dispuesto a procesar.</td>
+                </tr>
+                <tr>
+                    <td class="code">414</td>
+                    <td>URI Too Long</td>
+                    <td>URI Demasiado Largo</td>
+                    <td>La URI solicitada es más larga de lo que el servidor está dispuesto a interpretar.</td>
+                </tr>
+                <tr>
+                    <td class="code">415</td>
+                    <td>Unsupported Media Type</td>
+                    <td>Tipo de Medio No Soportado</td>
+                    <td>El formato multimedia de los datos solicitados no está soportado.</td>
+                </tr>
+                <tr>
+                    <td class="code">416</td>
+                    <td>Range Not Satisfiable</td>
+                    <td>Rango No Satisfactorio</td>
+                    <td>El rango especificado en el campo Range del encabezado no se puede cumplir.</td>
+                </tr>
+                <tr>
+                    <td class="code">417</td>
+                    <td>Expectation Failed</td>
+                    <td>Expectativa Fallida</td>
+                    <td>El servidor no puede cumplir con las expectativas indicadas en el campo Expect.</td>
+                </tr>
+                <tr>
+                    <td class="code">418</td>
+                    <td>I'm a teapot</td>
+                    <td>Soy una Tetera</td>
+                    <td>El servidor se niega a intentar preparar café con una tetera (código de broma del 1 de abril).</td>
+                </tr>
+                <tr>
+                    <td class="code">422</td>
+                    <td>Unprocessable Entity</td>
+                    <td>Entidad No Procesable</td>
+                    <td>La petición estaba bien formada pero no se pudo seguir debido a errores semánticos.</td>
+                </tr>
+                <tr>
+                    <td class="code">429</td>
+                    <td>Too Many Requests</td>
+                    <td>Demasiadas Peticiones</td>
+                    <td>El cliente ha enviado demasiadas peticiones en un período de tiempo dado.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- 5xx: Server Error -->
+    <div class="category server-error">
+        <div class="category-header">5xx - Errores del Servidor</div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="code">Código</th>
+                    <th class="name">Nombre</th>
+                    <th class="description">Descripción</th>
+                    <th class="details">Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="code">500</td>
+                    <td>Internal Server Error</td>
+                    <td>Error Interno del Servidor</td>
+                    <td>El servidor ha encontrado una situación que no sabe cómo manejar.</td>
+                </tr>
+                <tr>
+                    <td class="code">501</td>
+                    <td>Not Implemented</td>
+                    <td>No Implementado</td>
+                    <td>El servidor no soporta la funcionalidad requerida para completar la petición.</td>
+                </tr>
+                <tr>
+                    <td class="code">502</td>
+                    <td>Bad Gateway</td>
+                    <td>Puerta de Enlace Incorrecta</td>
+                    <td>El servidor, mientras actúa como puerta de enlace, recibió una respuesta inválida del servidor ascendente.</td>
+                </tr>
+                <tr>
+                    <td class="code">503</td>
+                    <td>Service Unavailable</td>
+                    <td>Servicio No Disponible</td>
+                    <td>El servidor no está listo para manejar la petición. Causas comunes: mantenimiento o sobrecarga.</td>
+                </tr>
+                <tr>
+                    <td class="code">504</td>
+                    <td>Gateway Timeout</td>
+                    <td>Tiempo de Espera de la Puerta de Enlace</td>
+                    <td>El servidor, mientras actúa como puerta de enlace, no recibió una respuesta oportuna del servidor ascendente.</td>
+                </tr>
+                <tr>
+                    <td class="code">505</td>
+                    <td>HTTP Version Not Supported</td>
+                    <td>Versión de HTTP No Soportada</td>
+                    <td>El servidor no soporta la versión del protocolo HTTP usada en la petición.</td>
+                </tr>
+                <tr>
+                    <td class="code">506</td>
+                    <td>Variant Also Negotiates</td>
+                    <td>La Variante También Negocia</td>
+                    <td>El servidor tiene un error de configuración interna: la negociación transparente de contenido para la petición resulta en una referencia circular.</td>
+                </tr>
+                <tr>
+                    <td class="code">507</td>
+                    <td>Insufficient Storage</td>
+                    <td>Almacenamiento Insuficiente</td>
+                    <td>El servidor no puede almacenar la representación necesaria para completar la petición.</td>
+                </tr>
+                <tr>
+                    <td class="code">508</td>
+                    <td>Loop Detected</td>
+                    <td>Bucle Detectado</td>
+                    <td>El servidor detectó un bucle infinito mientras procesaba la petición.</td>
+                </tr>
+                <tr>
+                    <td class="code">510</td>
+                    <td>Not Extended</td>
+                    <td>No Extendido</td>
+                    <td>Extensiones adicionales de la petición son requeridas para que el servidor la cumpla.</td>
+                </tr>
+                <tr>
+                    <td class="code">511</td>
+                    <td>Network Authentication Required</td>
+                    <td>Autenticación de Red Requerida</td>
+                    <td>El cliente necesita autenticarse para ganar acceso a la red.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <footer>
+        <p>Esta tabla incluye los códigos de estado HTTP más comunes según el RFC 7231 y extensiones.</p>
+        <p>© 2025 - Referencia HTTP Status Codes</p>
+    </footer>
+</body>
+</html>

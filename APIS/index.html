@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apis</title>
+</head>
+<body>
+    <h1>Apis</h1>
+    <h2>Application Programming Interface - Interfaz de Programación de Aplicaciones</h2>
+    <p>Una API es un conjunto de reglas predeterminadas que nos van a permitir que se comuniquen dos sistemas diferentes</p>
+    <p>Se utiliza mucho cuando queremos que un frotend consuma un backend, se comunican entre sí a través de una API</p>
+    <p>Las APIs funcionan comi intermediarios que permiten que un software solicite servicios o datos de otro software</p>
+
+
+    <h2>Formatos y protocolos</h2>
+    <div class="card">
+        <h2>REST (Representational State Transfer)</h2>
+        <p>REST es el estilo arquitectónico más común para APIs web modernas. Sus características principales son:</p>
+        <ul>
+            <li><strong>Arquitectura cliente-servidor</strong>: Separa las responsabilidades entre quien solicita los recursos (cliente) y quien los proporciona (servidor).</li>
+            <li><strong>Sin estado (Stateless)</strong>: Cada solicitud del cliente contiene toda la información necesaria, sin depender de solicitudes anteriores.</li>
+            <li>
+                <strong>Operaciones CRUD</strong> mediante métodos HTTP:
+                <ul>
+                    <li>GET (obtener recursos)</li>
+                    <li>POST (crear recursos)</li>
+                    <li>PUT/PATCH (actualizar recursos)</li>
+                    <li>DELETE (eliminar recursos)</li>
+                </ul>
+            </li>
+            <li><strong>Recursos identificados por URLs</strong>: Cada recurso tiene su propia dirección web única (por ejemplo, <code>https://api.ejemplo.com/usuarios/123</code>).</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>GraphQL</h2>
+        <p>GraphQL es una alternativa más reciente a REST, desarrollada por Facebook:</p>
+        <ul>
+            <li><strong>Consultas flexibles</strong>: El cliente especifica exactamente qué datos necesita, evitando transferencias excesivas de información.</li>
+            <li><strong>Punto de entrada único</strong>: A diferencia de REST que tiene múltiples endpoints, GraphQL típicamente usa un solo endpoint.</li>
+            <li><strong>Operaciones</strong>: Query (consultar), Mutation (modificar) y Subscription (recibir actualizaciones en tiempo real).</li>
+            <li><strong>Schema tipado</strong>: Define claramente la estructura de datos disponibles y las operaciones permitidas.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Formatos de Datos</h2>
+        
+        <div class="format-comparison">
+            <div class="format json">
+                <h3>JSON (JavaScript Object Notation)</h3>
+                <ul>
+                    <li>El formato más popular actualmente</li>
+                    <li>Ligero y fácil de leer por humanos</li>
+                    <li>Basado en pares clave-valor: <code>{"nombre": "Juan", "edad": 30}</code></li>
+                    <li>Compatible naturalmente con JavaScript y soportado por la mayoría de lenguajes</li>
+                </ul>
+            </div>
+
+            <div class="format xml">
+                <h3>XML (eXtensible Markup Language)</h3>
+                <ul>
+                    <li>Formato más antiguo pero aún utilizado</li>
+                    <li>Utiliza etiquetas similares a HTML: <code>&lt;usuario&gt;&lt;nombre&gt;Juan&lt;/nombre&gt;&lt;edad&gt;30&lt;/edad&gt;&lt;/usuario&gt;</code></li>
+                    <li>Más verboso que JSON pero ofrece validación mediante esquemas (XSD)</li>
+                    <li>Común en servicios web SOAP y sistemas empresariales antiguos</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Protocolos de Comunicación</h2>
+        <ul>
+            <li><strong>HTTP/HTTPS</strong>: El protocolo estándar para transferencia de datos web</li>
+            <li><strong>WebSockets</strong>: Permite comunicación bidireccional en tiempo real</li>
+            <li><strong>gRPC</strong>: Sistema de Google para comunicaciones rápidas entre microservicios</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Autenticación y Seguridad</h2>
+        <p>Las APIs modernas implementan varios métodos de autenticación:</p>
+        <ul>
+            <li><strong>API Keys</strong>: Claves simples incluidas en las solicitudes</li>
+            <li><strong>OAuth 2.0</strong>: Estándar para autorización delegada</li>
+            <li><strong>JWT (JSON Web Tokens)</strong>: Tokens firmados para transmitir identidad</li>
+            <li><strong>HTTPS</strong>: Cifrado de datos durante la transmisión</li>
+        </ul>
+    </div>
+
+
+    <p>Vamos a utilizar una API falsa https://jsonplaceholder.typicode.com/</p>
+
+    <script src="js/funciones2.js"></script>
+</body>
+</html>

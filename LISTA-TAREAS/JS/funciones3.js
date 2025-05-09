@@ -1,3 +1,19 @@
+//array para guardar las tareas
+let listaTareas = [];
+let contadorTareas =0;
+
+//recupero las tareas guardadas en el navegador
+if(localStorage.getItem("tareasGuardadas") != null){
+    listaTareas = localStorage.getItem("tareasGuardadas");
+    //como están guardadas en formato json le cambio el formato a array de objetos
+    listaTareas = JSON.parse(listaTareas);
+    listaTareas.forEach(item => {
+        displayTarea(item);
+        if(item.id > contadorTareas){
+            contadorTareas = item.id + 1;
+        }
+    });
+}
 
 //selecciona el boton de añadir tarea y me crea un evento para que cuando se haga click en el boton se ejecute la funcion crear tarea
 document.getElementById("buttonAdd").addEventListener('click', crearTarea);
@@ -27,12 +43,26 @@ function crearTarea(){
 
     //creo un objeto para guardar la tarea
     const tarea = {
+        id: contadorTareas,
         texto: textoTarea,
         tipo: tipoTarea,
         tareaRealizada: false
     }
 
-    //creo una variable con un icono de un color u otro para mostrar segun sea el tipo de tarea
+    contadorTareas++;
+
+    //añadir mi tarea al array
+    listaTareas = [tarea, ...listaTareas];
+    //guardfar el array en el navegador
+    localStorage.setItem("tareasGuardadas", JSON.stringify(listaTareas));
+    console.log(listaTareas);
+
+
+    displayTarea(tarea);
+}
+
+function displayTarea(tarea){
+//creo una variable con un icono de un color u otro para mostrar segun sea el tipo de tarea
     //la variable contiene un icono de color
     let iconoTipo = '&#129001;';
     if(tarea.tipo === 'obligatoria'){
@@ -47,18 +77,36 @@ function crearTarea(){
     //añade contenido al nodo li
     //checkbox es una casilla de verificacion
     li.innerHTML = `
-        <div>
+        <div data-id="${tarea.id}">
         <input type="checkbox" class="tareaRealizada"> 
         ${iconoTipo} 
         <span class="texto-tarea">${tarea.texto}</span>
         </div>
         <button class="eliminar">🗑️</button>`;
+
+    if(tarea.tareaRealizada == true){
+        li.style.opacity = '0.8';
+        //tacha el texto
+        li.querySelector('.texto-tarea').style.textDecoration = "line-through";
+        //marcar la casilla como seleccionada
+        li.querySelector('.tareaRealizada').checked = true;
+
+        }
     
     //añado el elemento li como hijo del elemento ul que hay en el html
     document.getElementById("listaTareas").appendChild(li);
 
     //añado un evento click al boton elimiar que elimina el li entero
     li.querySelector('.eliminar').addEventListener('click', function(){
+        //averiguar que id tiene la tarea
+        let idTarea =  li.querySelector('div').getAttribute('data-id');
+        //eliminar la tarea del array
+        listaTareas = listaTareas.filter(item => item.id != idTarea);
+        localStorage.setItem("tareasGuardadas", JSON.stringify(listaTareas));
+
+        console.log(listaTareas);
+
+        //borrar la tarea de la pantalla
         li.remove();
     })
 
@@ -82,6 +130,8 @@ function crearTarea(){
             //marca el objeto como tarea no realizada
             tarea.tareaRealizada = false;
         }
+        localStorage.setItem("tareasGuardadas", JSON.stringify(listaTareas));
+
     })
 
     document.getElementById("inputTarea").value = '';

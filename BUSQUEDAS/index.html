@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsquedas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tienda de tecnología</h1>
+        <div class="controles">
+            <div class="botones">
+                <input type="radio" id="todos" name="filtrar">
+                <label for="todos">Todos</label>
+
+                <input type="radio" id="disponibles" name="filtrar">
+                <label for="disponibles">Disponibles</label>
+
+                <input type="radio" id="no_disponibles" name="filtrar">
+                <label for="no_disponibles">No Disponibles</label>
+            </div>
+            <div class="ordenar">
+                <input type="radio" id="ordenar-alfabetico" name="ordenar">
+                <label for="ordenar-alfabetico">A - Z</label>
+
+                <input type="radio" id="ordenar-alfabetico-inverso" name="ordenar">
+                <label for="ordenar-alfabetico-inverso">Z - A</label>
+            </div>
+            <div class="categorias" id="categorias">
+                <select id="select_categorias">
+
+                </select>
+            </div>
+        </div>
+
+        <div id="productos">
+
+        </div>
+    </div>
+    <script type="module" src="js/productos-tecnologia.js"></script>
+
+    <script type="module" src="js/funciones.js"></script>
+</body>
+</html>
