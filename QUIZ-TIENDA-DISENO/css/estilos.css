@@ -153,3 +153,53 @@ h3 {
   margin-right: auto;
   max-height: 300px;
 }
+
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.section-formulario{
+    background-image: url(../img/FONDO-COSAS.jpg);
+    padding-bottom: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.section-formulario h2{
+    text-align: center;
+    color: var(--morado);
+    padding-top: 2rem;
+}
+form label {
+    margin: 10px 0 5px;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color:var(--morado);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--gris);
+    color: white;
+}

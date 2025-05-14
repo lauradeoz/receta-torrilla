@@ -36,6 +36,30 @@ const preguntas = [
       { texto: "Tonos cálidos, detalles cuidados", valor: "elegante", img: "img/detalle.jpg" },
    ]
 },
+{
+    texto: "¿Qué textura te atrae más?",
+    opciones: [
+      { texto: "Superficies lisas y planas", valor: "minimal", img: "img/lisa.jpg" },
+      { texto: "Texturas visuales con puntos y patrones", valor: "popart", img: "img/patrones.jpg" },
+      { texto: "Mármol, terciopelo o detalles decorativos", valor: "elegante",img: "img/terciopelo.jpg" }
+    ]
+  },
+   {
+    texto: "¿Qué sensación quieres que transmita tu diseño?",
+    opciones: [
+      { texto: "Claridad y orden" ,  valor: "minimal" , img: "img/claridad.jpg"},
+      { texto: "Diversión y rebeldía", valor: "popart" , img: "img/diversion.jpg"},
+      { texto: "Lujo y distinción", valor: "elegante" , img: "img/lujox2.jpg" }
+    ]
+  },
+  {
+  texto: "¿Qué forma geométrica te representa mejor?",
+  opciones: [
+    { texto: "Rectángulo o cuadrado", valor: "minimal", img: "img/cuadrado.jpg" },
+    { texto: "Estrella o rayo", valor: "popart" , img: "img/estrella.jpg"},
+    { texto: "Círculo con ornamentos", valor: "elegante", img: "img/circulo.jpg" }
+  ]
+}
 //   {
 //     texto: "¿Cuál sería tu diseño soñado?",
 //     opciones: [
